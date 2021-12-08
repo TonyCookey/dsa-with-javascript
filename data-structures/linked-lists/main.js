@@ -20,27 +20,21 @@ class LinkedList {
 
         this.tail = this.tail.next
     }
-}
-mLinkedList = {
-    head: {
-        value: 10,
-        next: {
-            value: 5,
-            next: {
-                value: 16,
-                next: null,
-            },
+    prepend(value) {
+        this.head = {
+            value,
+            next: this.head
         }
-    },
-    tail: {
-        value: 16,
-        next: null,
-    },
-};
+        this.length++
+    }
+}
+
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.append(12);
+myLinkedList.append(19);
+myLinkedList.prepend(1);
 console.log(myLinkedList);
 
