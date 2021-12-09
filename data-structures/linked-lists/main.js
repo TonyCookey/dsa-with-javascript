@@ -88,7 +88,8 @@ myLinkedList.append(16);
 myLinkedList.append(12);
 myLinkedList.append(19);
 myLinkedList.prepend(1);
-console.log(myLinkedList.insertAt(2, 14))
+myLinkedList.insertAt(2, 14)
+console.log(myLinkedList.printList())
 myLinkedList.remove(2)
 console.log(myLinkedList.printList())
 console.log(myLinkedList);
