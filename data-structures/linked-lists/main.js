@@ -57,6 +57,15 @@ class LinkedList {
 
 
     }
+    remove(index) {
+
+        // get the node leading/preceeding the node at the index you want to insert at
+        const leader = this.traverseTill(index - 1)
+        leader.next = leader.next.next
+        //insert the new node at next of the leader
+
+        this.length--
+    }
     traverseTill(index) {
         let counter = 0
         let currentNode = this.head
@@ -79,8 +88,8 @@ myLinkedList.append(16);
 myLinkedList.append(12);
 myLinkedList.append(19);
 myLinkedList.prepend(1);
-myLinkedList
-console.log(myLinkedList.insertAt(9, 14))
+console.log(myLinkedList.insertAt(2, 14))
+myLinkedList.remove(2)
 console.log(myLinkedList.printList())
 console.log(myLinkedList);
 
