@@ -59,10 +59,18 @@ class LinkedList {
     }
     remove(index) {
 
-        // get the node leading/preceeding the node at the index you want to insert at
+        if (index < 0 || index > this.length) {
+            return 'invalid index'
+        }
+
+        // get the node leading/preceeding the node at the index you want to remove at
         const leader = this.traverseTill(index - 1)
-        leader.next = leader.next.next
-        //insert the new node at next of the leader
+
+        // get the toBeRemovedNode
+        const toBeRemovedNode = leader.next
+
+        // set the node follwing the toBeRemovedNode as the next node to the leader node 
+        leader.next = toBeRemovedNode.next
 
         this.length--
     }
@@ -78,9 +86,6 @@ class LinkedList {
 
 }
 
-// { head: { value: 1, next: { value: 10, next: [Object] } },
-//   tail: { value: 19, next: null },
-//   length: 6 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
