@@ -4,7 +4,8 @@ class LinkedList {
     constructor(value) {
         this.head = {
             value: value,
-            next: null
+            next: null,
+            prev: null
         };
         this.tail = this.head;
         this.length = 1;
@@ -14,6 +15,7 @@ class LinkedList {
         this.tail.next = {
             value,
             next: null
+            prev: this.head
         }
         // increase the length property
         this.length++
