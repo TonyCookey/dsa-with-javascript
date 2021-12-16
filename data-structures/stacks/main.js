@@ -12,7 +12,6 @@ class Stack {
         this.length = 0;
     }
     peek() {
-        console.log(this.top.value);
         return this.top
     }
     push(value) {
@@ -44,6 +43,9 @@ const myStack = new Stack();
 myStack.push("Tony")
 myStack.push("Cookey")
 myStack.push("Starboy")
+myStack.pop()
+myStack.pop()
+myStack.pop()
 myStack.peek()
 myStack.isEmpty()
 myStack
