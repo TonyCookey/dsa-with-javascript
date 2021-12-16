@@ -3,9 +3,9 @@ class CrazyQueue {
         this.first = [];
         this.last = [];
     }
-
     enqueue(value) {
         const length = this.first.length;
+
         for (let i = 0; i < length; i++) {
             this.last.push(this.first.pop());
         }
@@ -19,7 +19,6 @@ class CrazyQueue {
     dequeue() {
         const length = this.last.length;
         for (let i = 0; i < length; i++) {
-
             this.first.push(this.last.pop());
         }
         console.log(this.first);
@@ -36,11 +35,12 @@ class CrazyQueue {
 
 const myQueue = new CrazyQueue();
 myQueue.peek();
-myQueue.enqueue('Joy');
-myQueue.enqueue('Matt');
-//   myQueue.enqueue('Pavel');
+myQueue.enqueue('1');
+myQueue.enqueue('2');
+myQueue.enqueue('3');
+myQueue.enqueue('4');
 myQueue.peek();
-//   myQueue.dequeue();
-//   myQueue.dequeue();
-//   myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
 myQueue
