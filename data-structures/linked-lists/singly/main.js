@@ -5,7 +5,6 @@ class LinkedList {
         this.head = {
             value: value,
             next: null,
-            prev: null,
         };
         this.tail = this.head;
         this.length = 1;
@@ -13,7 +12,6 @@ class LinkedList {
     append(value) {
         // set the tail to the last value just added
         this.tail.next = {
-            prev: this.tail,
             value,
             next: null
         }
@@ -24,11 +22,10 @@ class LinkedList {
     }
     prepend(value) {
         this.head = {
-            prev: null,
             value,
             next: this.head
         }
-        this.head.next.prev = this.head
+        this.head.next = this.head
         this.length++
     }
     printList() {
@@ -53,10 +50,8 @@ class LinkedList {
 
         const newNode = {
             value,
-            prev: leader,
             next: nodeAtIndex
         }
-        nodeAtIndex.prev = newNode
         leader.next = newNode
         this.length++
     }
@@ -74,7 +69,6 @@ class LinkedList {
 
         // set the node follwing the toBeRemovedNode as the next node to the leader node 
         leader.next = toBeRemovedNode.next
-        toBeRemovedNode.next.prev = leader
 
         this.length--
     }
