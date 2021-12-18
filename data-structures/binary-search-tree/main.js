@@ -42,7 +42,19 @@ class BinarySearchTree {
         }
     }
     lookup(value) {
-        //Code here
+        let nodePointer = this.root
+
+        while (nodePointer != null) {
+            if (nodePointer.value == value) {
+                return nodePointer
+            }
+            if (value < nodePointer.value) {
+                nodePointer = nodePointer.left
+            }
+            else {
+                nodePointer = nodePointer.right
+            }
+        }
     }
     // remove
 }
@@ -52,4 +64,5 @@ bst.insert(10)
 bst.insert(3)
 bst.insert(13)
 bst.insert(1)
+console.log(bst.lookup(19))
 console.log(bst.root)
