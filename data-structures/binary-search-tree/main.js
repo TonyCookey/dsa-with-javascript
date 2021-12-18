@@ -11,8 +11,7 @@ class BinarySearchTree {
         this.root = null;
     }
     insert(value) {
-        let newNode = new Node()
-        newNode.value = value
+        let newNode = new Node(value)
 
         // check if the root node is empty
         if (this.root == null) {
@@ -55,14 +54,21 @@ class BinarySearchTree {
                 nodePointer = nodePointer.right
             }
         }
+        return false
     }
     // remove
 }
 
+function traverse(node) {
+    const tree = { value: node.value };
+    tree.left = node.left === null ? null : traverse(node.left);
+    tree.right = node.right === null ? null : traverse(node.right);
+    return tree;
+}
 const bst = new BinarySearchTree()
 bst.insert(10)
 bst.insert(3)
 bst.insert(13)
 bst.insert(1)
-console.log(bst.lookup(19))
-console.log(bst.root)
+console.log(bst.lookup(1))
+
