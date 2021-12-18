@@ -106,13 +106,14 @@ class BinarySearchTree {
                 }
                 return
             }
+            predecessor = nodePointer
             if (value < nodePointer.value) {
+
                 nodePointer = nodePointer.left
             }
             else {
                 nodePointer = nodePointer.right
             }
-            predecessor = nodePointer
 
         }
     }
