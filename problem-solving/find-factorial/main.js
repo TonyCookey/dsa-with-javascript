@@ -15,5 +15,3 @@ function findFactorialUsingIteration(x) {
     }
     return sum
 }
-const result = findFactorialUsingIteration(6)
-result
