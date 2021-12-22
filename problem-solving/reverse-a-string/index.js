@@ -1,5 +1,4 @@
-// Reverse a string 
-
+// Reverse a string using Iteration
 function reverseString(randomString, sep) {
     // Convert string to array using string.split()
     // Time Complexity: O(n)
@@ -14,16 +13,30 @@ function reverseString(randomString, sep) {
     }
     return resultArray.join(sep)
 }
+
+// using Recursion Approach 1
+function reverseStringRecursion(str) {
+    if (str.length == 1) {
+        return str[0]
+    }
+    splitStr = str.split('')
+
+    return splitStr.pop() + reverseStringRecursion(splitStr.join(''))
+}
+
+// using Recursion Approach 2
+function reverseStringRecursive(str) {
+    if (str === "") {
+        return "";
+    } else {
+        return reverseStringRecursive(str.substr(1)) + str.charAt(0);
+    }
+}
+
+
 // using the built in reverse() and join() methods
 const reverseStringUsingReverse = str => str.split('').reverse().join('')
 
+
 // suing the ES6 syntax and the spread operator
 const reverseStringUsingES6 = str => [...str].reverse().join('')
-
-const randomString = 'My name is Tony Cookey'
-const result = reverseString(randomString, '')
-const result2 = reverseStringUsingReverse(randomString)
-const result3 = reverseStringUsingES6(randomString)
-result
-result2
-result3
