@@ -19,6 +19,23 @@ function selectionSort(array) {
     }
     return array
 }
+function selectionSort2(array) {
+    for (let i = 0; i < array.length; i++) {
+        let minNumberIndex = i
 
-const result = selectionSort(numbers);
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[minNumberIndex] > array[j]) {
+                minNumberIndex = j
+            }
+        }
+
+        let holding = array[i]
+        array[i] = array[minNumberIndex]
+        array[minNumberIndex] = holding
+
+    }
+    return array
+}
+
+const result = selectionSort2(numbers);
 result
