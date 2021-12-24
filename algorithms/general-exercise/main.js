@@ -1,3 +1,4 @@
+// Sorting Questions
 //#1 - Sort 10 schools around your house by distance:
 // insertion sort
 
@@ -21,3 +22,25 @@
 
 //#8 - You want to teach sorting for the first time
 // bubble/selection
+
+
+
+// Searching/Traversals
+
+//If you know a solution is not far from the root of the tree:
+//BFS
+
+//If the tree is very deep and solutions are rare: 
+//BFS
+
+//If the tree is very wide:
+//DFS
+
+//If solutions are frequent but located deep in the tree:
+//DFS
+
+//Determining whether a path exists between two nodes:
+//DFS
+
+//Finding the shortest path:
+//BFS
