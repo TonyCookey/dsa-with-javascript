@@ -52,6 +52,20 @@ class BinarySearchTree {
         }
         return list
     }
+    breadthFirstSearchRecursive(queue, list) {
+        if (queue.length == 0) {
+            return list
+        }
+        let currentNode = queue.shift()
+        list.push(currentNode.value)
+        if (currentNode.left) {
+            queue.push(currentNode.left)
+        }
+        if (currentNode.right) {
+            queue.push(currentNode.right)
+        }
+        return this.breadthFirstSearchRecursive(queue, list)
+    }
 
 }
 
@@ -63,18 +77,10 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-const result = tree.breadthFirstSearch()
+tree.breadthFirstSearch()
+const result = tree.breadthFirstSearchRecursive([tree.root], [])
 result
-
-JSON.stringify(traverse(tree.root))
 
 //     9
 //  4     20
 //1  6  15  170
-
-function traverse(node) {
-    const tree = { value: node.value };
-    tree.left = node.left === null ? null : traverse(node.left);
-    tree.right = node.right === null ? null : traverse(node.right);
-    return tree;
-}
