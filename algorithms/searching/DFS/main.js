@@ -55,7 +55,17 @@ class BinarySearchTree {
         }
         return list
     }
+    DFSPostorder(node, list) {
+        if (node.left) {
+            this.DFSPostorder(node.left, list)
+        }
+        if (node.right) {
+            this.DFSPostorder(node.right, list)
+        }
+        list.push(node.value)
 
+        return list
+    }
 
 }
 
@@ -67,7 +77,7 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-const result = tree.DFSPreorder(tree.root, [])
+const result = tree.DFSPostorder(tree.root, [])
 result
 
 //     9
