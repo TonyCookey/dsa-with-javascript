@@ -2,20 +2,21 @@ function addTo80(n) {
     return n + 80
 }
 
-let cache = {}
 
 function memoizedAddTo80(n) {
-    if (n in cache) {
-        console.log('from cache');
+    let cache = {}
+    return function name(params) {
+        if (n in cache) {
+            console.log('from cache');
+            return cache[n]
+        }
+        cache[n] = n + 80
         return cache[n]
     }
-    cache[n] = n + 80
-    return cache[n]
 }
 
-const result = memoizedAddTo80(10)
+const memoized = memoizedAddTo80(10)
+const result = memoized()
 result
-const result2 = memoizedAddTo80(10)
-result2
-const result3 = memoizedAddTo80(20)
-result3
+const result2 = memoized()
+result
