@@ -1,3 +1,4 @@
+let calculations = 0
 function fibonacciMaster() { //O(n)
     let cache = {};
     return function fib(n) {
@@ -17,3 +18,4 @@ function fibonacciMaster() { //O(n)
 const fibonacci = fibonacciMaster()
 result = fibonacci(20)
 result
+console.log(calculations);
