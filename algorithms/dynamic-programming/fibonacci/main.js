@@ -15,7 +15,12 @@ function fibonacciMaster() { //O(n)
         }
     }
 }
-const fibonacci = fibonacciMaster()
-result = fibonacci(20)
+function fibonacciBottomsUp(n) {
+    let sequence = [0, 1]
+    for (let i = 2; i <= n; i++) {
+        sequence.push((sequence[i - 2] + sequence[i - 1]))
+    }
+    return sequence.pop()
+}
+const result = fibonacciBottomsUp(10)
 result
-console.log(calculations);
