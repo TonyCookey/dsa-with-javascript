@@ -13,6 +13,17 @@ function reverseString(randomString, sep) {
     }
     return resultArray.join(sep)
 }
+function reverseStringInPlace(s) {
+    let temp
+    let j = s.length - 1
+    for (let i = 0; i < j; i++) {
+        temp = s[i]
+        s[i] = s[j]
+        s[j] = temp
+        j--
+    }
+
+}
 
 // using Recursion Approach 1
 function reverseStringRecursion(str) {
