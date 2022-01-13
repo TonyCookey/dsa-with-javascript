@@ -13,5 +13,5 @@ const isPalindrome = (x) => {
     return true
 }
 
-const result = isPalindrome(122222331)
+const result = isPalindrome(1222223321)
 result
